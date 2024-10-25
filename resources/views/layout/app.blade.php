@@ -12,6 +12,10 @@
 @include('partials.header')
 
 <body>
+
+    @yield('main-content')
+
+
     @vite('resources/js/app.js')
 </body>
 
