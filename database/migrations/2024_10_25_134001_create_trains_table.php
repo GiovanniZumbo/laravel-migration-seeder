@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('trains', function (Blueprint $table) {
             $table->id();
+            $table->string("azienda", 50)->nullable(false);
+            $table->string("stazione_partenza", 80)->nullable(false);
+            $table->string("stazione_arrivo", 80)->nullable(false);
+            $table->date("data_partenza")->nullable(false);
+            $table->time("orario_partenza")->nullable(false);
+            $table->time("orario_arrivo")->nullable(false);
+            $table->string("codice_treno");
+            $table->tinyInteger("numero_carrozze");
+            $table->boolean("in_orario")->default(true);
+            $table->boolean("cancellato")->default(false);
             $table->timestamps();
         });
     }
