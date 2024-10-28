@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('passengers', function (Blueprint $table) {
             $table->id();
+            $table->string("firstName");
+            $table->string("lastName");
+            $table->tinyInteger("age");
             $table->timestamps();
         });
     }
@@ -20,6 +23,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
+
     public function down(): void
     {
         Schema::dropIfExists('passengers');
